@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+apply from: 'http://ivy.reallysi.com/ivy-repo/rsuite-community/repositories.gradle'
+apply from: 'http://ivy.reallysi.com/ivy-repo/rsuite-community/std-plugin-tasks.gradle'
+
+group = "rsuite-community"
+project.buildDir = 'target'
+
+configurations {
+	includeInJar {
+		transitive = false
+	}
+}
+
+dependencies {
+	configurations.compile.extendsFrom(configurations.includeInJar)
+}
+
+jar () {
+	baseName='rsuite-message-props-lib'
+	from configurations.includeInJar
+}
