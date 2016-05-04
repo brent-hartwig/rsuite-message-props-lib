@@ -5,9 +5,12 @@ Version 0.0.1 is not yet operational.  A fix may be to have the extension overri
 
 Draft usage pattern:
 
-1. Consumers of this library are to extend LibraryMessageProperties.  Example:
+1. Consumers of this library are to extend LibraryMessageProperties.  An example is below.
+2. Consumers are also to include a Java message properties file in the same JAR as their LibraryMessageProperties extension.  The file name should match the Java class extension name + ".properties".  Continuing the previous example, the filename should be 'ContainerWizardMessageProperties.properties'.
 
-'
+Example extension of LibraryMessageProperties:
+
+'''
 package com.rsicms.rsuite.containerWizard;
 
 import java.io.IOException;
@@ -26,7 +29,4 @@ public class ContainerWizardMessageProperties extends LibraryMessageProperties {
   }
 
 }
-'
-
-2. Consumers are also to include a Java message properties file in the same JAR as their LibraryMessageProperties extension.  The file name should match the Java class extension name + ".properties".  Continuing the previous example, the filename should be 'ContainerWizardMessageProperties.properties'.
-
+'''
