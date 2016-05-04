@@ -10,7 +10,7 @@ Draft usage pattern:
 
 Example extension of LibraryMessageProperties:
 
-'''
+```
 package com.rsicms.rsuite.containerWizard;
 
 import java.io.IOException;
@@ -29,4 +29,4 @@ public class ContainerWizardMessageProperties extends LibraryMessageProperties {
   }
 
 }
-'''
+```
